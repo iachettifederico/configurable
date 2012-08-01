@@ -9,7 +9,7 @@ Easily config any Ruby object.
 
 Add this line to your application's Gemfile:
 ```ruby
-gem 'configurable'
+gem 'config-role'
 ```
 And then execute:
 
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install configurable
+    $ gem install config-role
 
 ## Usage
 
