@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+require File.expand_path('../lib/configurable', __FILE__)
 require File.expand_path('../lib/configurable/version', __FILE__)
 
 Gem::Specification.new do |gem|
@@ -8,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{This gem allows you to grant your Ruby objects the ability to allow configurations}
   gem.homepage      = ""
 
-  gem.files         = `git ls-files`.split($\)
+  gem.files         = `git ls-files`.split('\n')
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "configurable"

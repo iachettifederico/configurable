@@ -1,4 +1,4 @@
-require "configurable/version"
+require_relative "configurable/version"
 
 module Configurable
   def config( attrs={} )
@@ -19,7 +19,7 @@ module Configurable
     OpenStruct.new( hashify( attrs ) )
   end
 
-   def hashify( obj )
+  def hashify( obj )
     if obj.respond_to?(:to_hash)
       obj.to_hash
     elsif obj.class == OpenStruct
