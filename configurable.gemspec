@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{This gem allows you to grant your Ruby objects the ability to allow configurations}
   gem.homepage      = ""
 
-  gem.files         = `git ls-files`.split('\n')
+  gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "configurable"
