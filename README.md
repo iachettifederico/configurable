@@ -9,7 +9,7 @@ Easily config any Ruby object.
 
 Add this line to your application's Gemfile:
 ```ruby
-gem 'config-role'
+gem 'configurable', git: 'git://github.com/iachettifederico/configurable.git'
 ```
 And then execute:
 
