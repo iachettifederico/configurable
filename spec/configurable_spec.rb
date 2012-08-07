@@ -44,14 +44,13 @@ describe Configurable do
       subject.config.x.must_equal :x
     end
     
-    # TODO: Make this test pass
-    # it "accepts a block without parameters" do
-    #   subject.config do
-    #     x = :x
-    #     y = :y
-    #   end
-    #   subject.config.must_equal( { x: :x, y: :y } )
-    # end
+    #it "accepts a block without parameters" do
+    #  subject.config do
+    #    x :x
+    #    y :y
+    #  end
+    #  subject.config.must_equal( { x: :x, y: :y } )
+    #end
     
     it "gives preference to the block" do
       subject.config( { x: :not_x, y: :y } ) do |c|

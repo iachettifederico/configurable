@@ -17,7 +17,8 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install config-role
+    $ gem install specific_install
+    $ gem specific_install -l git://github.com/iachettifederico/configurable.git
 
 ## Usage
 
@@ -48,8 +49,8 @@ You may also provide a configuration block. Continuing with the
 previous example:
 
 ```ruby
-report.cofig do
-  default_paper_size :a4
+report.cofig do |c|
+  c.default_paper_size = :a4
 end
 ```
 
@@ -86,30 +87,15 @@ the precedence is taken by the block:
 
 ```ruby
 report = Report.new
-report.cofig default_font: :comic_sans
+report.cofig(default_font: :comic_sans) do |c|
+  c.default_font = :arial
+end
 ```
 And access the new attribute like this:
 
 ```ruby
 report.config.default_font
-=> :comic_sans
-```
-
-You may also provide a configuration block. Continuing with the
-previous example:
-
-```ruby
-report.cofig do
-  default_paper_size :a4
-end
-```
-
-And now you can access the new atribute the same way that the previous
-one:
-
-```ruby
-report.cofig.default_paper_size
-=> :a4
+=> :arial
 ```
 
 ## Contributing
@@ -125,3 +111,13 @@ report.cofig.default_paper_size
 1. Allow the config method to be named differently
 2. Define a default return value (or action) for undefined attributes
 other than nil
+3. Allow the following syntax:
+
+```ruby
+report = Report.new
+report.cofig
+  default_font :arial
+end
+report.config.default_font
+=> :arial
+```

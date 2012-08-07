@@ -1,4 +1,4 @@
 
 module Configurable
-  VERSION = "0.0.2.alpha"
+  VERSION = "1.0.0.alpha"
 end
