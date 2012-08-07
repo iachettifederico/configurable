@@ -4,6 +4,14 @@ module Configurable
   def config( attrs={} )
     @config = OpenStruct( hashify(@config).merge( hashify(attrs)) )
     @config.define_singleton_method( :clean ) { marshal_load( {} ) }
+    @config.define_singleton_method(to_s) do
+      s = "Configs: \n"
+      @table.each do |var, val|
+        s << "\t#{var}: #{val}\n"
+      end  
+      s
+    end
+
     
     if !block_given?
       @config
@@ -28,5 +36,8 @@ module Configurable
       {}
     end
   end
+
+  
+
   
 end
