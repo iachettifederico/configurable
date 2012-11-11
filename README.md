@@ -36,7 +36,7 @@ you can say:
 
 ```ruby
 report = Report.new
-report.cofig default_font: :comic_sans
+report.config default_font: :comic_sans
 ```
 And access the new attribute like this:
 
@@ -49,7 +49,7 @@ You may also provide a configuration block. Continuing with the
 previous example:
 
 ```ruby
-report.cofig do |c|
+report.config do |c|
   c.default_paper_size = :a4
 end
 ```
@@ -58,7 +58,7 @@ And now you can access the new atribute the same way that the previous
 one:
 
 ```ruby
-report.cofig.default_paper_size
+report.config.default_paper_size
 => :a4
 ```
 
@@ -77,7 +77,7 @@ comic sans is not the right font for a report - or anything for that matter)
 
 ```ruby
 report = Report.new
-report.cofig default_font: :arial
+report.config default_font: :arial
 report.config.default_font
 => :arial
 ```
@@ -87,7 +87,7 @@ the precedence is taken by the block:
 
 ```ruby
 report = Report.new
-report.cofig(default_font: :comic_sans) do |c|
+report.config(default_font: :comic_sans) do |c|
   c.default_font = :arial
 end
 ```
@@ -115,7 +115,7 @@ other than nil
 
 ```ruby
 report = Report.new
-report.cofig
+report.config
   default_font :arial
 end
 report.config.default_font
